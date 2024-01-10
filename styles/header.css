@@ -1,0 +1,176 @@
+/*.search-bar{
+    display: block; --not needed because seach bar is already inside a div
+}*/
+/*.header*/
+header{
+    height: 55px;
+    display: flex;
+    flex-direction: row; /*row is default(hence not needed)*/
+    justify-content: space-between;
+    /*CSS Position*/
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(228, 228, 228);
+    z-index: 100; 
+    /*Elements with a higher z-index appear in front of elements with a lower z-index.*/
+    /*z index here is for between the video grid thumbnails and the header (since thumbails are position: relative)*/
+}
+.left-section{
+    /*background-color: lightblue;*/
+    /*width: 150px;*/
+    display: flex; /*flex box inside a flex box*/
+    align-items: center;
+}
+.hamburger-menu{
+    height: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+.youtube-logo{
+    height: 20px;
+}
+
+.middle-section{
+    /*background-color: lightpink;*/
+    flex: 1;
+    margin-left: 70px;
+    margin-right: 35px;
+    max-width: 500px;
+    display: flex;/*flex box inside a flex box*/
+    /*by default : flex direction is row*/
+    align-items: center;
+}
+.search-bar{
+    flex:1;
+    height: 36px;
+    padding-left: 10px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(192, 192, 192);
+    border-radius: 2px;
+    box-shadow: inset 1px/*right*/ 1px/*bottom*/ 3px/*blur*/ rgba(0,0,0,0.15); /*inset : because of shadow on the inside (of the box)*/
+    width:0px;/*search bar (flex:1) but after a certain point it doesnt shrink because of default width*/
+              /*so making the width 0 so that it can shrink atmost*/
+}
+.search-bar::placeholder{/*targetting only the placeholder(search text) in search bar*/
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.search-button{
+    height: 39px;
+    width:66px;
+    background-color: rgb(241, 240, 240);
+    border-width:1px;
+    border-style: solid;
+    border-color: rgb(192, 192, 192);
+    margin-left: -1px; /*pushes the margin to the left*/
+    margin-right: 10px;
+    /*for tool tip positioning*/
+    /*position:relative;*/
+}
+
+.search-button, 
+.voice-search-button,
+.upload-icon-container,
+.youtube-apps-container,
+.notifications-icon-container{
+    display: flex;/*to center the tooltip with the icon while hovering*/
+    justify-content: center; /*vertical alignment*/
+    align-items: center;
+    position: relative;
+}
+.search-button .tooltip, 
+.voice-search-button .tooltip,
+.upload-icon-container .tooltip,
+.youtube-apps-container .tooltip,
+.notifications-icon-container .tooltip{
+    position: absolute;
+    background-color: gray;
+    color: white;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    bottom: -30px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    /*to disable the pop of tooltip if we hover over it's actual position*/
+    white-space: nowrap;
+    /*Prevents the text inside the element from wrapping to multiple lines.*/
+}
+
+
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.upload-icon-container:hover .tooltip,
+.youtube-apps-container:hover .tooltip,
+.notifications-icon-container:hover .tooltip{
+    opacity: 1;
+}
+.search-icon{
+    height:25px;
+    /*margin-top: 4px; not needed as it becomes flex!*/
+}
+.voice-search-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(245, 245, 245);
+    /*position: relative;*/
+}
+.voice-search-icon{
+    height:24px;
+    /*margin-top: 4px; not needed as it becomes flex!*/
+}
+
+.right-section{
+    /*background-color: lightblue;*/
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    flex-shrink: 0;/*to prevent the flex box from shrinking*/
+}
+.upload-icon{
+    height: 24px;
+}
+.youtube-apps-icon{
+    height: 24px;
+}
+.notifications-icon{
+    height: 24px;
+}
+.current-user-picture{
+    height: 32px;
+    border-radius: 50%;
+}
+/*notification icon styling*/
+.notifications-icon-container{
+    position: relative;
+}
+.notifications-count{
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    background-color: rgb(200, 0, 0);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 50%;
+}

@@ -1,0 +1,36 @@
+.sidebar{
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    top: 55px;/*since the height of the header is 55px*/
+    background-color: white;
+    width: 72px;
+    z-index: 200;
+    /*higher than the z index of header(100) so that the bottom border is not
+      applied to the side bar also.
+    */
+    padding-top: 5px;
+}
+
+.sidebar-link{
+    height: 74px;
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: column; /*to make the icon and icon name in vertical order*/
+    justify-content: center;/* vertical alignment*/
+    align-items: center;/*horizontal alignment*/
+    cursor: pointer;
+}
+.sidebar-link:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+.sidebar-link img{
+    height: 24px;
+    margin-bottom: 4px;
+}
+.sidebar-link div{
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+}

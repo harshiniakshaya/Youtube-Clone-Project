@@ -1,0 +1,96 @@
+.video-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 40px;
+}
+
+/*RESPONSIVE DESIGN*/
+/*CSS code below gets applied when screen width is between 0px - 750px.*/
+@media (max-width : 750px) {
+    .video-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width:751px) and (max-width:999px){
+    .video-grid{
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+/*CSS code below gets applied when screen width>=1000px*/
+@media (min-width : 1000px){
+    .video-grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+.video-preview{
+    /*width: 300px; --not needed because of grid (1fr)--
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;*/
+}
+.thumbnail-row{
+    margin-bottom: 8px;
+    position: relative;
+}
+.video-info-grid{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+.channel-picture{
+    /*
+    --not needed because of grid--
+    display: inline-block;
+    width: 40px;
+    vertical-align: top;
+    */
+}
+.profile-picture{
+    width: 36px;
+    border-radius: 50px;
+    object-fit: contain;
+}
+.video-info{
+    /*display: inline-block;
+    width: 200px;*/
+}
+.thumbnail{
+    /*width: 300px;*/
+    width: 100%;
+    /*display: block;*/
+}
+.video-time{
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 8px;
+    right: 5px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+}
+.video-title{
+    margin-top: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.video-author{
+    font-size: 12px;
+    color: rgb(96,96,96);
+    margin-bottom: 4px;
+}
+.video-stats{
+    font-size: 12px;
+    color:rgb(96,96,96);
+}
+
